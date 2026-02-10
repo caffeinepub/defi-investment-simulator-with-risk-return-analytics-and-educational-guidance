@@ -1,0 +1,63 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-app-s-visual-theme-to-a-monochromatic-palette-with-a-subtle-glow-effect-applied-consistently-across-all-screens-and-components-including-cards-borders-focus-rings-sliders-badges-and-tables",
+      "featureTitle": "Update the app’s visual theme to a monochromatic palette with a subtle glow effect applied consistently across all screens and components (including cards, borders, focus rings, sliders, badges, and tables).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-compounding-support-to-the-lp-calculator-so-fee-apr-earnings-can-be-computed-using-both-simple-no-compounding-and-compounded-fee-reinvestment-over-the-selected-timeframe-and-display-the-compounded-result-in-the-lp-results",
+      "featureTitle": "Add compounding support to the LP calculator so fee APR earnings can be computed using both simple (no compounding) and compounded fee reinvestment over the selected timeframe, and display the compounded result in the LP results.",
+      "files": [
+        "frontend/src/features/lp/LpCalculatorView.tsx",
+        "frontend/src/features/lp/lpMath.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-the-existing-live-data-if-available-mode-functional-by-implementing-live-market-data-loading-for-the-existing-aave-compound-adapters-with-robust-error-handling-and-a-clear-fallback-to-sample-data-when-live-fetching-is-unavailable",
+      "featureTitle": "Make the existing “Live Data (if available)” mode functional by implementing live market data loading for the existing Aave/Compound adapters, with robust error handling and a clear fallback to sample data when live fetching is unavailable.",
+      "files": [
+        "frontend/src/features/strategy/StrategyBuilderView.tsx",
+        "frontend/src/market-data/adapters.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

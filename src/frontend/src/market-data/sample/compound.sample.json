@@ -1,0 +1,45 @@
+{
+  "protocol": "compound",
+  "assets": [
+    {
+      "id": "eth",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "priceUSD": 2450.0,
+      "interestRate": 0.022,
+      "liquidationThreshold": 0.8
+    },
+    {
+      "id": "usdc",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "priceUSD": 1.0,
+      "interestRate": 0.032,
+      "liquidationThreshold": 0.85
+    },
+    {
+      "id": "dai",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "priceUSD": 1.0,
+      "interestRate": 0.034,
+      "liquidationThreshold": 0.85
+    },
+    {
+      "id": "wbtc",
+      "name": "Wrapped Bitcoin",
+      "symbol": "WBTC",
+      "priceUSD": 42500.0,
+      "interestRate": 0.016,
+      "liquidationThreshold": 0.75
+    },
+    {
+      "id": "comp",
+      "name": "Compound",
+      "symbol": "COMP",
+      "priceUSD": 58.5,
+      "interestRate": 0.045,
+      "liquidationThreshold": 0.65
+    }
+  ]
+}

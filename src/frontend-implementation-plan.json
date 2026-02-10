@@ -1,0 +1,75 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Monochrome glow theme, LP compounding, and functional Live Data mode",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "summary": "Apply a monochromatic grayscale theme with a subtle, consistent glow across the app (including focus rings and common surfaces).",
+      "acceptanceCriteria": [
+        "Light and dark modes (if supported) remain readable with appropriate contrast for text, muted text, borders, and surfaces.",
+        "The theme is primarily monochromatic (grayscale/neutral), and any glow effect is subtle (e.g., gentle ring/outline/shadow) rather than strong multicolor accents.",
+        "Interactive elements (inputs, sliders, buttons, focus states) visibly reflect the new theme and glow consistently across views."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update CSS theme tokens to a strictly monochromatic palette in both :root and .dark; replace current chart/accent tokens with neutral grayscale equivalents; define a subtle glow via ring/shadow-related tokens and add global focus-visible styling that uses the ring color to create a gentle glow while preserving accessibility contrast."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind boxShadow extensions so commonly-used shadows (sm/default/md/lg/xl) incorporate a subtle neutral glow consistent with the new ring color; keep the glow understated to avoid overpowering surfaces and ensure dark mode still reads clearly."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update any remaining non-monochrome accent usages (e.g., chart color classes used for icons/links) to neutral equivalents so the header/footer and navigation reflect the monochromatic glow theme consistently across screens."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Add compounding frequency support to LP fee APR calculations and display compounded results in LP outputs.",
+      "acceptanceCriteria": [
+        "LP calculator includes a user control to choose compounding behavior (e.g., none/simple vs daily/weekly/monthly), and the selection changes the displayed results.",
+        "When compounding is enabled, the displayed fees earned and net difference (LP vs Hold) update deterministically based on the chosen frequency and timeframe.",
+        "When compounding is disabled, results match the current simple-interest behavior for fee APR earnings."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/lp/lpMath.ts",
+          "operation": "modify",
+          "description": "Extend LP fee earnings math to support both simple (current behavior) and compounded reinvestment based on a selected compounding frequency; keep calculations deterministic and consistent with the existing timeframe-days model."
+        },
+        {
+          "path": "frontend/src/features/lp/LpCalculatorView.tsx",
+          "operation": "modify",
+          "description": "Add a compounding frequency control to the LP calculator UI and wire it into fee earnings and net difference computations; use the shadcn-ui Select component to present options (e.g., None/Simple, Daily, Weekly, Monthly) and update the results display to reflect the selected compounding behavior. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Implement functional Live Data mode for Aave/Compound market data with robust errors and fallback to sample data.",
+      "acceptanceCriteria": [
+        "Selecting Live Data mode no longer throws the current hard error in the market data adapter path; the app remains usable.",
+        "If live data fetch succeeds, the simulator uses the live market data values for assets/rates/parameters.",
+        "If live data fetch fails for any reason, the UI presents an English error message and continues to work using Sample Data (either via automatic fallback or an obvious recovery path)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/market-data/adapters.ts",
+          "operation": "modify",
+          "description": "Replace the hard-throwing live data stub with real live market data loading for the existing Aave and Compound adapters using browser fetch; implement timeouts/validation and produce clear English errors when live fetching is unavailable or returns unusable data, enabling a safe fallback path to sample data."
+        },
+        {
+          "path": "frontend/src/features/strategy/StrategyBuilderView.tsx",
+          "operation": "modify",
+          "description": "Harden the Live Data toggle flow: ensure initial market data load runs via React effect (not state initializer side effects), keep the UI usable on live fetch failures, present a clear English error message, and maintain/clarify automatic fallback to Sample Data when live loading fails (including syncing the toggle state)."
+        }
+      ]
+    }
+  ]
+}

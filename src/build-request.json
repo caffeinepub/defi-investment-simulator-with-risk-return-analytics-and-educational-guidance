@@ -1,0 +1,89 @@
+{
+  "kind": "build_request",
+  "title": "Apply monochromatic glow theme, add compounding to LP calculator, and enable functional live market data mode",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "text": "Update the app’s visual theme to a monochromatic palette with a subtle glow effect applied consistently across all screens and components (including cards, borders, focus rings, sliders, badges, and tables).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4",
+          "msg-5"
+        ],
+        "quotes": [
+          "monochromatic with sligth glow",
+          "all"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Light and dark modes (if supported) remain readable with appropriate contrast for text, muted text, borders, and surfaces.",
+        "The theme is primarily monochromatic (grayscale/neutral), and any glow effect is subtle (e.g., gentle ring/outline/shadow) rather than strong multicolor accents.",
+        "Interactive elements (inputs, sliders, buttons, focus states) visibly reflect the new theme and glow consistently across views."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Add compounding support to the LP calculator so fee APR earnings can be computed using both simple (no compounding) and compounded fee reinvestment over the selected timeframe, and display the compounded result in the LP results.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "lp should have compounding"
+        ]
+      },
+      "acceptanceCriteria": [
+        "LP calculator includes a user control to choose compounding behavior (e.g., none/simple vs daily/weekly/monthly), and the selection changes the displayed results.",
+        "When compounding is enabled, the displayed fees earned and net difference (LP vs Hold) update deterministically based on the chosen frequency and timeframe.",
+        "When compounding is disabled, results match the current simple-interest behavior for fee APR earnings."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Make the existing “Live Data (if available)” mode functional by implementing live market data loading for the existing Aave/Compound adapters, with robust error handling and a clear fallback to sample data when live fetching is unavailable.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3",
+          "msg-6"
+        ],
+        "quotes": [
+          "also add live data",
+          "yes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Selecting Live Data mode no longer throws the current hard error in the market data adapter path; the app remains usable.",
+        "If live data fetch succeeds, the simulator uses the live market data values for assets/rates/parameters.",
+        "If live data fetch fails for any reason, the UI presents an English error message and continues to work using Sample Data (either via automatic fallback or an obvious recovery path)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text.",
+    "Do not edit files under frontend/src/components/ui or any other immutablePaths listed in SYSTEM_CONTEXT; compose them instead.",
+    "Backend must remain a single Motoko actor (backend/main.mo); only add migration.mo if a state upgrade is required."
+  ],
+  "nonGoals": [
+    "Adding new protocols beyond the existing Aave and Compound options.",
+    "Introducing third-party authentication providers (only Internet Identity is supported).",
+    "Adding external databases or non-IC backend services."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

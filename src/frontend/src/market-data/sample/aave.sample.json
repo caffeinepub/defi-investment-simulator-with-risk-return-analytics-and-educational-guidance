@@ -1,0 +1,45 @@
+{
+  "protocol": "aave",
+  "assets": [
+    {
+      "id": "eth",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "priceUSD": 2450.0,
+      "interestRate": 0.025,
+      "liquidationThreshold": 0.825
+    },
+    {
+      "id": "usdc",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "priceUSD": 1.0,
+      "interestRate": 0.035,
+      "liquidationThreshold": 0.85
+    },
+    {
+      "id": "dai",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "priceUSD": 1.0,
+      "interestRate": 0.038,
+      "liquidationThreshold": 0.85
+    },
+    {
+      "id": "wbtc",
+      "name": "Wrapped Bitcoin",
+      "symbol": "WBTC",
+      "priceUSD": 42500.0,
+      "interestRate": 0.018,
+      "liquidationThreshold": 0.75
+    },
+    {
+      "id": "usdt",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "priceUSD": 1.0,
+      "interestRate": 0.04,
+      "liquidationThreshold": 0.85
+    }
+  ]
+}

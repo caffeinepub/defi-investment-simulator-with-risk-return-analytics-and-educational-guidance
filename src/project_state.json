@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "App to simulate DeFi investments with risk/return calculations and educational guidance, integrating with DeFi protocols (e.g., Aave, Compound) via APIs; expand to include LP and staking calculators and a more modern UI.",
+  "architectural_notes": [
+    "Frontend planned in React or Vue.",
+    "Backend planned in Python or Node.js.",
+    "External integrations with DeFi protocol APIs (Aave, Compound).",
+    "Theme direction updated: monochromatic palette with a slight glow applied app-wide.",
+    "Live protocol data should be enabled via the existing Aave/Compound adapter toggle (use Live Data when available, otherwise fallback to sample data)."
+  ],
+  "known_issues": [
+    "UI slider control is not working (user reports slider doesn't respond / update values).",
+    "Some calculations are not working properly/updating (user-reported).",
+    "LP calculator missing compounding support (user-requested fix)."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-the-core-app-information-architecture-and-navigation-for-a-defi-investment-simulator-including-pages-sections-for-1-strategy-builder-deposit-borrow-positions-2-scenario-simulator-3-risk-liquidation-metrics-4-yield-return-breakdown-and-5-learning-guidance-content-tied-to-results",
+      "title": "Create the core app information architecture and navigation for a DeFi investment simulator, including pages/sections for: (1) Strategy Builder (deposit/borrow positions), (2) Scenario Simulator, (3) Risk & Liquidation Metrics, (4) Yield/Return Breakdown, and (5) Learning / Guidance content tied to results.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-defi-strategy-simulation-data-model-and-state-flow-that-supports-simulated-positions-e-g-deposits-and-borrows-portfolio-totals-and-time-based-scenario-steps-e-g-interest-accrual-over-days-with-deterministic-results-for-the-same-inputs",
+      "title": "Implement a DeFi strategy simulation data model and state flow that supports simulated positions (e.g., deposits and borrows), portfolio totals, and time-based scenario steps (e.g., interest accrual over days) with deterministic results for the same inputs.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-risk-calculation-module-that-outputs-key-simulated-defi-risk-metrics-including-at-minimum-collateral-ratio-health-factor-liquidation-price-estimate-and-sensitivity-to-price-change-e-g-x-underlying-price-shock",
+      "title": "Add a risk calculation module that outputs key simulated DeFi risk metrics, including (at minimum): collateral ratio / health factor, liquidation price estimate, and sensitivity to price change (e.g., +/- X% underlying price shock).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-return-yield-calculation-module-that-computes-and-displays-simulated-apr-apy-interest-accrual-over-time-and-net-returns-for-the-strategy-including-a-breakdown-by-position-and-totals",
+      "title": "Add a return/yield calculation module that computes and displays simulated APR/APY, interest accrual over time, and net returns for the strategy, including a breakdown by position and totals.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-an-educational-guidance-layer-that-explains-the-results-and-suggests-next-steps-e-g-why-risk-is-high-what-parameter-changes-reduce-liquidation-risk-and-support-linking-embedding-external-training-materials-via-user-configurable-urls",
+      "title": "Provide an educational guidance layer that explains the results and suggests next steps (e.g., why risk is high, what parameter changes reduce liquidation risk), and support linking/embedding external training materials via user-configurable URLs.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-protocol-market-data-integration-layer-with-adapters-for-aave-and-compound-that-can-power-default-rates-parameters-if-live-fetching-is-not-available-in-the-runtime-provide-a-fully-functional-fallback-using-bundled-static-sample-datasets-and-a-ui-toggle-to-switch-between-sample-data-and-live-data-if-available",
+      "title": "Create a protocol market data integration layer with adapters for Aave and Compound that can power default rates/parameters; if live fetching is not available in the runtime, provide a fully functional fallback using bundled static sample datasets and a UI toggle to switch between “Sample Data” and “Live Data (if available)”.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-define-and-apply-a-coherent-distinctive-visual-theme-for-the-app-colors-typography-spacing-and-component-styling-suitable-for-an-educational-finance-simulator-and-use-it-consistently-across-all-screens",
+      "title": "Define and apply a coherent, distinctive visual theme for the app (colors, typography, spacing, and component styling) suitable for an educational finance simulator, and use it consistently across all screens.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-render-required-static-image-assets-for-branding-and-layout-stored-under-frontend-public-assets-generated-and-use-them-in-the-ui-e-g-header-landing",
+      "title": "Generate and render required static image assets for branding and layout, stored under frontend/public/assets/generated, and use them in the UI (e.g., header/landing).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-non-working-price-shock-sensitivity-slider-in-the-risk-metrics-view-so-users-can-drag-it-to-change-the-price-shock-percentage-and-see-the-ui-value-update-immediately",
+      "title": "Fix the non-working \"Price Shock Sensitivity\" slider in the Risk Metrics view so users can drag it to change the price shock percentage and see the UI value update immediately.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-liquidity-provider-lp-calculator-section-to-the-app-that-estimates-impermanent-loss-and-lp-outcomes-based-on-user-inputs",
+      "title": "Add a new Liquidity Provider (LP) calculator section to the app that estimates impermanent loss and LP outcomes based on user inputs.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-staking-calculator-section-to-the-app-that-estimates-staking-rewards-and-compounding-outcomes-based-on-user-inputs",
+      "title": "Add a new staking calculator section to the app that estimates staking rewards and compounding outcomes based on user inputs.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-modernize-and-polish-the-ui-styling-across-the-app-layout-spacing-typography-surfaces-to-feel-more-modern-and-visually-pleasing-while-keeping-the-existing-information-architecture-intact",
+      "title": "Modernize and polish the UI styling across the app (layout, spacing, typography, surfaces) to feel more modern and visually pleasing while keeping the existing information architecture intact.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-s-visual-theme-to-a-monochromatic-palette-with-a-subtle-glow-effect-applied-consistently-across-all-screens-and-components-including-cards-borders-focus-rings-sliders-badges-and-tables",
+      "title": "Update the app’s visual theme to a monochromatic palette with a subtle glow effect applied consistently across all screens and components (including cards, borders, focus rings, sliders, badges, and tables).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-compounding-support-to-the-lp-calculator-so-fee-apr-earnings-can-be-computed-using-both-simple-no-compounding-and-compounded-fee-reinvestment-over-the-selected-timeframe-and-display-the-compounded-result-in-the-lp-results",
+      "title": "Add compounding support to the LP calculator so fee APR earnings can be computed using both simple (no compounding) and compounded fee reinvestment over the selected timeframe, and display the compounded result in the LP results.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-existing-live-data-if-available-mode-functional-by-implementing-live-market-data-loading-for-the-existing-aave-compound-adapters-with-robust-error-handling-and-a-clear-fallback-to-sample-data-when-live-fetching-is-unavailable",
+      "title": "Make the existing “Live Data (if available)” mode functional by implementing live market data loading for the existing Aave/Compound adapters, with robust error handling and a clear fallback to sample data when live fetching is unavailable.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "DeFi investment simulation engine (portfolio/positions, deposits/borrows, scenario simulation)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Risk calculation module for simulated DeFi strategies (e.g., liquidation risk, volatility, exposure metrics)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Return/yield calculation module for simulated DeFi strategies (APY/APR, interest accrual, net returns)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "User guidance/educational walkthroughs tied to simulation results",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Integration layer for DeFi APIs/protocol data (Aave, Compound)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Support embedding/linking the app with external training/educational materials",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add LP (liquidity provider) calculator (e.g., impermanent loss + fee/yield estimates)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add staking calculator (staking rewards/APY, compounding, lockup assumptions)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Modernize UI/visual design to be more modern and pleasing (refresh theme/components/layout)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Fix Price Shock Sensitivity slider and correct calculation issues; add compounding support to the LP calculator",
+      "reqIds": [],
+      "status": "in_progress"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "DeFi investment simulator with risk/return analytics and educational guidance",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

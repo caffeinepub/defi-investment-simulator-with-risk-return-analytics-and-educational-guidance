@@ -1,0 +1,73 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-09T23:34:47.863Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-13",
+        "summary": "Update the app’s visual theme to a monochromatic palette with a subtle glow effect applied consistently across all screens and components (including cards, borders, focus rings, sliders, badges, and tables).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Add compounding support to the LP calculator so fee APR earnings can be computed using both simple (no compounding) and compounded fee reinvestment over the selected timeframe, and display the compounded result in the LP results.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/lp/lpMath.ts",
+          "frontend/src/features/lp/LpCalculatorView.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/lp/lpMath.ts",
+          "frontend/src/features/lp/LpCalculatorView.tsx"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Make the existing “Live Data (if available)” mode functional by implementing live market data loading for the existing Aave/Compound adapters, with robust error handling and a clear fallback to sample data when live fetching is unavailable.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/market-data/adapters.ts",
+          "frontend/src/features/strategy/StrategyBuilderView.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/market-data/adapters.ts",
+          "frontend/src/features/strategy/StrategyBuilderView.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/features/lp/LpCalculatorView.tsx",
+    "frontend/src/features/lp/lpMath.ts",
+    "frontend/src/features/strategy/StrategyBuilderView.tsx",
+    "frontend/src/index.css",
+    "frontend/src/market-data/adapters.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
